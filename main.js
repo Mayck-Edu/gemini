@@ -49,7 +49,7 @@ async function image(valorTeste) {
 // main();
 
 async function texto() {
-  const prompt = "crie um prompt com uma ideia (seja direto na sugestão) de imagem aleatória (NÃO FAÇA POLVOS, ASTRONALTAS, FAROIS, capivaras OU URSOS)";
+  const prompt = "crie um prompt com uma ideia (seja direto na sugestão) de imagem aleatória (NÃO FAÇA FAROIS, capivaras e avite animais)";
   console.log("=== passo 01 ===")
 
   const response = await ai.models.generateContent({
