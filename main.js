@@ -36,15 +36,20 @@ async function image(valorTeste) {
     } else if (part.inlineData) {
       const imageData = part.inlineData.data;
       const buffer = Buffer.from(imageData, "base64");
-      fs.writeFileSync("gemini-native-image.png", buffer);
-      console.log("Image saved as gemini-native-image.png");
+      const nome_arquivo = Math.floor(Math.random() * 10000) + ".png";
+      // Ensure the directory exists
+      if (!fs.existsSync("./resultados")) {
+        fs.mkdirSync("./resultados");
+      }
+      fs.writeFileSync("./resultados/" + nome_arquivo, buffer);
+      console.log("Image saved as ./resultados/" + nome_arquivo);
     }
   }
 }
 // main();
 
 async function texto() {
-  const prompt = "crie um prompt com uma ideia (seja direto na sugestão) de imagem aleatória (NÃO FAÇA POLVOS, ASTRONALTAS, FAROIS OU URSOS)";
+  const prompt = "crie um prompt com uma ideia (seja direto na sugestão) de imagem aleatória (NÃO FAÇA POLVOS, ASTRONALTAS, FAROIS, capivaras OU URSOS)";
   console.log("=== passo 01 ===")
 
   const response = await ai.models.generateContent({
