@@ -9,15 +9,15 @@ if (process.env.GOOGLE_GENAI_API_KEY) {
 }
 
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GENAI_API_KEY });
-let valorTeste;
+let promptImagem;
 
 
 
-async function image(valorTeste) {
+async function image(promptImagem) {
   const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GENAI_API_KEY });
 
 
-  const contents = valorTeste + ' realista, fotografia, alta qualidade, 8k, ultra realista, foco nítido, iluminação dramática, composição equilibrada, cores vibrantes, detalhes intrincados, perspectiva única, atmosfera envolvente';
+  const contents = promptImagem + ' realista, fotografia, alta qualidade, 8k, ultra realista, foco nítido, iluminação dramática, composição equilibrada, cores vibrantes, detalhes intrincados, perspectiva única, atmosfera envolvente';
   console.log(contents);
 
   console.log("\n === passo 02 ===")
@@ -57,8 +57,8 @@ async function texto() {
     contents: prompt,
   });
 
-  valorTeste = response.text;
-  await image(valorTeste);
+  promptImagem = response.text;
+  await image(promptImagem);
 }
 
 texto();
