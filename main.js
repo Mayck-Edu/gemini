@@ -30,7 +30,7 @@ async function image(promptImagem) {
   const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GENAI_API_KEY });
 
 
-  const contents = promptImagem + ' realista, fotografia, alta qualidade, 8k, ultra realista, foco nítido, iluminação dramática, composição equilibrada, cores vibrantes, detalhes intrincados, perspectiva única, atmosfera envolvente';
+  const contents =   'um fundo para imagem segundo os requisitos proporção 3200x1000: Cor principal: Um tom de roxo escuro e profundo. Padrão: Uma textura sutil de pequenos pontos ou ruído, distribuída de forma uniforme sobre a cor roxa, dando uma leve sensação de profundidade.    Efeitos de luz: Manchas de luz coloridas e desfocadas, semelhantes ao efeito bokeh, nas seguintes áreas:        Canto superior direito: Uma mistura de tons de rosa, laranja e amarelo.       Canto inferior esquerdo: Um brilho suave em tons de rosa e magenta.    Estilo geral: O fundo tem uma aparência moderna e vibrante, com um toque profissional, usando o contraste entre o roxo escuro e os pontos de luz coloridos para criar interesse visual.';
   console.log(contents);
 
   console.log("\n === passo 02 ===")
